@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'Botones/BotonIniciarSesion.dart';
-import 'Campos/CampoBase.dart';
+import 'Campos/CampoNombreDeUsuario.dart';
 import 'Campos/CampoContraseña.dart';
 import 'Botones/BotonCrearCuenta.dart';
 
