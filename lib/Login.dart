@@ -13,6 +13,7 @@ class Login extends StatelessWidget {
   Widget build(BuildContext context) {
     final Size screenSize = MediaQuery.of(context).size;
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Login',
       home: Scaffold(
         appBar: AppBar(
