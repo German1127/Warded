@@ -10,6 +10,7 @@ class TerminosCondiciones extends StatelessWidget {
     final screenSize = MediaQuery.of(context).size;
 
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Terminos y condiciones',
       home: Container(
         color: Colors.black,
