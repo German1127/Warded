@@ -5,12 +5,14 @@ import 'Campos/CampoRegistroConfirmarPass.dart';
 import 'Botones/BotonRegistro.dart';
 
 void main() {
-  runApp(Registro());
+  runApp(CrearCuenta());
 }
 
-class Registro extends StatelessWidget {
+class CrearCuenta extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final screenSize = MediaQuery.of(context).size;
+
     return MaterialApp(
       title: 'Crear perfil',
       home: Scaffold(
@@ -37,12 +39,19 @@ class Registro extends StatelessWidget {
                       fit: BoxFit.cover,
                     ),
                   ),
-                  child: const Padding(
+                  child: Padding(
                     padding: EdgeInsets.all(20.0),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Text(
+                        Container(
+                          height: screenSize.height * 0.3,
+                          child: const Image(
+                            image: AssetImage('assets/IconoAgregarFoto.jpg'),
+                          ),
+                        ),
+                        SizedBox(height: 20.0),
+                        const Text(
                           'Ingresa una foto para que podamos reconocerte',
                           style: TextStyle(color: Colors.white),
                         ),
