@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:untitle/BotonesConIconos/BotonTerminosCondiciones.dart';
 import 'BotonesConIconos/BotonAlarma.dart';
 import 'BotonesConIconos/BotonAlarmaSalud.dart';
 import 'BotonesConIconos/BotonAccidente.dart';
@@ -10,6 +11,8 @@ import 'BotonesConIconos/BotonGrupo.dart';
 import 'BotonesConIconos/BotonMapa.dart';
 import 'BotonesConIconos/BotonSospechoso.dart';
 import 'BotonesConIconos/BotonTrafico.dart';
+import 'BotonesConIconos/BotonTerminosCondiciones.dart';
+import 'BotonesConIconos/BotonActualizarPerfil.dart';
 
 void main() {
   runApp(PaginaPrincipal());
@@ -30,6 +33,35 @@ class PaginaPrincipal extends StatelessWidget {
             ),
           ),
           backgroundColor: Colors.black,
+          actions: <Widget>[
+            Theme(
+              data: Theme.of(context).copyWith(
+                canvasColor: Colors.black,
+                cardColor: Colors.black,
+              ),
+              child: PopupMenuButton<String>(
+                icon: Icon(Icons.menu, color: Colors.green, size: 50.0),
+                itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
+                  PopupMenuItem<String>(
+                    value: 'Términos y Condiciones',
+                    child: Container(
+                      width: MediaQuery.of(context).size.width * 0.2,
+                      height: MediaQuery.of(context).size.height * 0.2,
+                      child: BotonTerminosCondiciones(),
+                    ),
+                  ),
+                  PopupMenuItem<String>(
+                    value: 'Actualizar Perfil',
+                    child: Container(
+                      width: MediaQuery.of(context).size.width * 0.2,
+                      height: MediaQuery.of(context).size.height * 0.2,
+                      child: BotonActualizarPerfil(),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
         ),
         body: Stack(
           children: <Widget>[
@@ -46,7 +78,7 @@ class PaginaPrincipal extends StatelessWidget {
               left: 0,
               right: 0,
               child: Container(
-                height: 110.0,
+                height: 90.0,
                 color: Colors.black.withOpacity(1.0),
                 margin: const EdgeInsets.only(top: 5.0, left: 0.0, right: 0.0),
                 padding: const EdgeInsets.all(0.100),
