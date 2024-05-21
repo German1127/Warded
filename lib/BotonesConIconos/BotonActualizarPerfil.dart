@@ -14,10 +14,10 @@ class BotonActualizarPerfil extends StatelessWidget {
         decoration: const BoxDecoration(
           color: Colors.black,
           borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(20.0),
-            topRight: Radius.circular(20.0),
-            bottomLeft: Radius.circular(20.0),
-            bottomRight: Radius.circular(20.0),
+            topLeft: Radius.circular(0.0),
+            topRight: Radius.circular(0.0),
+            bottomLeft: Radius.circular(0.0),
+            bottomRight: Radius.circular(0.0),
           ),
         ),
         child: Column(
