@@ -19,6 +19,7 @@ class PaginaPrincipal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Pagina principal',
       home: Scaffold(
         appBar: AppBar(
