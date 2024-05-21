@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 
-class BotonTerminoCondiciones extends StatelessWidget {
-  final VoidCallback onTap;
-
-  BotonTerminoCondiciones({required this.onTap});
-
+class BotonTerminosCondiciones extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onTap,
+      onTap: () {
+        print('¡Aca pongan lo que quieran que haga el boton SIN EL PRINT!');
+      },
       child: Container(
         width: 100.0,
         height: 100.0,
@@ -16,10 +14,10 @@ class BotonTerminoCondiciones extends StatelessWidget {
         decoration: const BoxDecoration(
           color: Colors.black,
           borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(20.0),
-            topRight: Radius.circular(20.0),
-            bottomLeft: Radius.circular(20.0),
-            bottomRight: Radius.circular(20.0),
+            topLeft: Radius.circular(0.0),
+            topRight: Radius.circular(0.0),
+            bottomLeft: Radius.circular(0.0),
+            bottomRight: Radius.circular(0.0),
           ),
         ),
         child: Column(
