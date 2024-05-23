@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'Botones/BotonCasita.dart';
 
 void main() {
   runApp(TerminosCondiciones());
@@ -24,6 +25,9 @@ class TerminosCondiciones extends StatelessWidget {
               ),
             ),
             backgroundColor: Colors.black,
+            actions: <Widget>[
+              const BotonCasita(text: 'Inicio'),
+            ],
           ),
           body: Column(
             children: <Widget>[
@@ -54,8 +58,8 @@ class TerminosCondiciones extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
                               SizedBox(height: 20.0),
-                               Text(
-                                    'Términos y Condiciones:\n'
+                              Text(
+                                'Términos y Condiciones:\n'
                                     'Los datos personales de los usuarios, como nombres, direcciones, números de teléfono,'
                                     ' y cualquier otra información sensible, deben ser recopilados y almacenados de manera segura,'
                                     ' cumpliendo con las regulaciones de privacidad de datos correspondientes (por ejemplo, GDPR en Europa, CCPA en California, etc.)'
