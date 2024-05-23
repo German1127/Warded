@@ -55,7 +55,8 @@ class CrearCuenta extends StatelessWidget {
                         SizedBox(height: 20.0),
                         CampoRegistroPass(labelText: 'Pass'),
                         SizedBox(height: 20.0),
-                        CampoRegistroConfirmarPass(labelText: 'Confirma el pass'),
+                        CampoRegistroConfirmarPass(
+                            labelText: 'Confirma el pass'),
                         SizedBox(height: 20.0),
                         BotonRegistro(text: 'Listo'),
                       ],
