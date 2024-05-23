@@ -4,10 +4,6 @@ import 'Campos/CampoNombreDeUsuario.dart';
 import 'Campos/CampoContraseña.dart';
 import 'Botones/BotonCrearCuenta.dart';
 
-void main() {
-  runApp(Login());
-}
-
 class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
