@@ -14,17 +14,11 @@ import 'BotonesConIconos/BotonTrafico.dart';
 import 'BotonesConIconos/BotonTerminosCondiciones.dart';
 import 'BotonesConIconos/BotonActualizarPerfil.dart';
 
-void main() {
-  runApp(PaginaPrincipal());
-}
 
 class PaginaPrincipal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Pagina principal',
-      home: Scaffold(
+    return Scaffold(
         appBar: AppBar(
           title: const Text(
             'Warded',
@@ -139,7 +133,6 @@ class PaginaPrincipal extends StatelessWidget {
             ),
           ],
         ),
-      ),
-    );
+      );
   }
 }

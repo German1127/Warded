@@ -4,18 +4,12 @@ import 'Campos/CampoNombreDeUsuario.dart';
 import 'Campos/CampoContraseña.dart';
 import 'Botones/BotonCrearCuenta.dart';
 
-void main() {
-  runApp(Login());
-}
 
 class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Size screenSize = MediaQuery.of(context).size;
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Login',
-      home: Scaffold(
+    return Scaffold(
         appBar: AppBar(
           title: const Text(
             'Warded',
@@ -67,7 +61,6 @@ class Login extends StatelessWidget {
             ),
           ),
         ),
-      ),
-    );
+      );
   }
 }

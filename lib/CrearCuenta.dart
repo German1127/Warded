@@ -4,18 +4,13 @@ import 'Campos/CampoRegistroPass.dart';
 import 'Campos/CampoRegistroConfirmarPass.dart';
 import 'Botones/BotonRegistro.dart';
 
-void main() {
-  runApp(CrearCuenta());
-}
 
 class CrearCuenta extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
 
-    return MaterialApp(
-      title: 'Crear perfil',
-      home: Scaffold(
+    return Scaffold(
         appBar: AppBar(
           title: const Text(
             'Crear perfil',
@@ -71,7 +66,6 @@ class CrearCuenta extends StatelessWidget {
             );
           },
         ),
-      ),
-    );
+      );
   }
 }
