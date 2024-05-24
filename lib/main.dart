@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:untitle/features/mis_grupos/view/widgets/mis_grupos_loading.dart';
+import 'package:untitle/PaginaPrincipal.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MisGruposLoading(),
+      home: PaginaPrincipal(),
     );
   }
 }

@@ -24,8 +24,10 @@ class _BotonAlarmaSaludDestello extends State<BotonAlarmaSalud> with SingleTicke
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        print('¡Aca pongan lo que quieran que haga el boton SIN EL PRINT!');
+      onLongPress: () {
+        Future.delayed(Duration(seconds: 2), () {
+          print('¡Se manda luego de mantenerlo 2 segundos!');
+        });
       },
       child: AnimatedContainer(
         duration: Duration(milliseconds: 1000),

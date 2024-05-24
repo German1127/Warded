@@ -24,8 +24,10 @@ class _BotonAlarmaDestello extends State<BotonAlarma> with SingleTickerProviderS
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        print('¡Aca pongan lo que quieran que haga el boton SIN EL PRINT!');
+      onLongPress: () {
+        Future.delayed(Duration(seconds: 2), () {
+          print('¡corre luego de 2 segundos apretado!');
+        });
       },
       child: AnimatedContainer(
         duration: Duration(milliseconds: 1000),
