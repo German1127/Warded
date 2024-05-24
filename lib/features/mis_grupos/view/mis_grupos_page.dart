@@ -19,7 +19,7 @@ class MisGruposPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'Mis Grupos',
+          'Tu grupo',
           style: TextStyle(
             color: Colors.green,
           ),
