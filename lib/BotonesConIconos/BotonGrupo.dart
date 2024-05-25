@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:untitle/features/mis_grupos/view/mis_grupos_page.dart';
 
 class BotonGrupo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        print('¡Aca pongan lo que quieran que haga el boton SIN EL PRINT!');
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => MisGruposPage()),
+        );
       },
       child: Container(
         width: 100.0,

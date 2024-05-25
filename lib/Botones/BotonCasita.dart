@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:untitle/PaginaPrincipal.dart';
 
 class BotonCasita extends StatelessWidget {
   final String text;
@@ -13,7 +14,10 @@ class BotonCasita extends StatelessWidget {
         color: Colors.green,
       ),
       onPressed: () {
-        // Aca va la funcion que le des al tocar el boton
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => PaginaPrincipal()),
+        );
       },
     );
   }
