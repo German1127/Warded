@@ -4,6 +4,7 @@ import 'package:untitle/features/mis_grupos/view/widgets/mis_grupos_item.dart';
 import 'package:untitle/Botones/BotonCasita.dart';
 import 'package:untitle/Botones/BotonUnirseGrupo.dart';
 import 'package:untitle/Botones/BotonAbandonarGrupo.dart';
+import 'package:untitle/Botones/BotonInvitarGrupo.dart';
 
 class MisGruposPage extends StatelessWidget {
   const MisGruposPage({super.key});
@@ -85,7 +86,13 @@ class MisGruposPage extends StatelessWidget {
                         itemCount: vecinos.length,
                       ),
                     ),
-                    BotonAbandonarGrupo(text: 'Abandonar',),
+                    const Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        BotonAbandonarGrupo(text: 'Abandonar',),
+                        BotonInvitarGrupo(text: 'Invitar',),
+                      ],
+                    ),
                   ],
                 ),
               ),

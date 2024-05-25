@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:untitle/features/mis_grupos/view/mis_grupos_page.dart';
+import 'package:untitle/bloc/estado_bloc.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(
+    BlocProvider(
+      create: (context) => GrupoBloc(),
+      child: WardedAPP(),
+    ),
+  );
 }
 
-class MyApp extends StatelessWidget {
+class WardedAPP extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
