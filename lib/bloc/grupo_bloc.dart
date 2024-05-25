@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:untitle/features/mis_grupos/models/vecino.dart';
 import 'package:untitle/bloc/estado_bloc.dart';
 import 'package:untitle/bloc/eventos_bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
 
 class MisGruposItem extends StatelessWidget {
   final Vecino vecino;
@@ -14,15 +16,6 @@ class MisGruposItem extends StatelessWidget {
       title: Text(vecino.nombre),
     );
   }
-}
-
-void main() {
-  runApp(
-    BlocProvider(
-      create: (context) => GrupoBloc(),
-      child: MiApp(),
-    ),
-  );
 }
 
 class MiApp extends StatelessWidget {
@@ -41,8 +34,13 @@ class MiApp extends StatelessWidget {
             ),
             floatingActionButton: FloatingActionButton(
               onPressed: () {
-                // Aquí necesitas crear una nueva instancia de Vecino
-                var nuevoUsuario = Vecino(nombre: 'Nuevo Usuario');
+                var nuevoUsuario = Vecino(
+                  null,
+                  null,
+                  'Carlitos',
+                  'Usuario',
+                  null,
+                );
                 context.read<GrupoBloc>().add(AgregarUsuario(nuevoUsuario));
               },
               child: Icon(Icons.add),
