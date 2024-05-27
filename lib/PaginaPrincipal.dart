@@ -11,7 +11,6 @@ import 'BotonesConIconos/BotonGrupo.dart';
 import 'BotonesConIconos/BotonMapa.dart';
 import 'BotonesConIconos/BotonSospechoso.dart';
 import 'BotonesConIconos/BotonTrafico.dart';
-import 'BotonesConIconos/BotonTerminosCondiciones.dart';
 import 'BotonesConIconos/BotonActualizarPerfil.dart';
 
 
