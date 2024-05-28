@@ -3,10 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:untitle/features/mis_grupos/cubic/mis_grupos_cubit.dart';
 import 'package:untitle/features/mis_grupos/models/vecino.dart';
 import 'package:untitle/features/mis_grupos/view/widgets/mis_grupos_item.dart';
-import 'package:untitle/Botones/BotonCasita.dart';
-import 'package:untitle/Botones/BotonUnirseGrupo.dart';
-import 'package:untitle/Botones/BotonAbandonarGrupo.dart';
-import 'package:untitle/Botones/BotonInvitarGrupo.dart';
+import 'package:untitle/Botones/boton_casita.dart';
+import 'package:untitle/Botones/boton_unirse_grupo.dart';
+import 'package:untitle/Botones/boton_abandonar_grupo.dart';
+import 'package:untitle/Botones/boton_invitar_grupo.dart';
 
 class MisGruposPage extends StatelessWidget {
   const MisGruposPage({super.key});
@@ -26,8 +26,7 @@ class MisGruposPage extends StatelessWidget {
           ),
           backgroundColor: Colors.black,
           actions: <Widget>[
-            BotonCasita(text: 'Inicio'),
-            ElevatedButton(onPressed: context.read<MisGruposCubit>().getVecinos, child: Text('cargar datos'))
+            IconButton(onPressed: context.read<MisGruposCubit>().getVecinos, icon: Icon(Icons.refresh)),
           ],
         ),
         body: Stack(

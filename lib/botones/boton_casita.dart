@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:untitle/PaginaPrincipal.dart';
+import 'package:untitle/pagina_principal.dart';
 
 class BotonCasita extends StatelessWidget {
   final String text;

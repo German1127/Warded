@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'Botones/BotonCasita.dart';
+import 'botones/boton_casita.dart';
 
 class TerminosCondiciones extends StatelessWidget {
   @override
@@ -17,7 +17,6 @@ class TerminosCondiciones extends StatelessWidget {
         ),
         backgroundColor: Colors.black,
         actions: const <Widget>[
-          BotonCasita(text: 'Inicio'),
         ],
       ),
       body: Column(

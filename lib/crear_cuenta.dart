@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'Campos/CampoRegistroNombre.dart';
-import 'Campos/CampoRegistroPass.dart';
-import 'Campos/CampoRegistroConfirmarPass.dart';
-import 'Botones/BotonRegistro.dart';
+import 'Campos/campo_registro_nombre.dart';
+import 'Campos/campo_registro_pass.dart';
+import 'Campos/campo_registro_confirmar_pass.dart';
+import 'Botones/boton_registro.dart';
 
 
 class CrearCuenta extends StatelessWidget {
