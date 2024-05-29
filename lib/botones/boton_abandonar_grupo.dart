@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:untitle/features/mis_grupos/cubic/mis_grupos_cubit.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
 
 class BotonAbandonarGrupo extends StatelessWidget {
   final String text;
@@ -9,7 +12,7 @@ class BotonAbandonarGrupo extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () {
-        // Aca va la funcion que le des al tocar el boton
+        context.read<MisGruposCubit>().abandonarGrupo(2);
       },
       style: ButtonStyle(
         backgroundColor: MaterialStateProperty.all<Color>(Colors.black),

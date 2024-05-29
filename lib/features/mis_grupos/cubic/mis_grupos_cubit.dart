@@ -26,4 +26,17 @@ class MisGruposCubit extends Cubit<MisGruposState> {
     ));
   }
 // abndonar el grupo
+  Future<void> abandonarGrupo(int vecinoId) async {
+    // emitir loading
+    emit(state.copyWith(loading: true));
+    await Future.delayed(Duration(seconds: 2));
+
+    // mira la lista de vecinos para sacar al vecino que se va
+    final List<Vecino> ActualizarVecinosList = state.vecinos.where((vecino) => vecino.id != vecinoId).toList();
+
+    emit(state.copyWith(
+      loading: false,
+      vecinos: ActualizarVecinosList,
+    ));
+  }
 }
