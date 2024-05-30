@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:untitle/pagina_QR.dart';
 
 class BotonInvitarGrupo extends StatelessWidget {
   final String text;
@@ -9,7 +10,10 @@ class BotonInvitarGrupo extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () {
-        // Aca va la funcion que le des al tocar el boton
+        Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => PaginaQR()),
+        );
       },
       style: ButtonStyle(
         backgroundColor: MaterialStateProperty.all<Color>(Colors.black),

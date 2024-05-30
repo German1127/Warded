@@ -12,7 +12,7 @@ class BotonAbandonarGrupo extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () {
-        context.read<MisGruposCubit>().abandonarGrupo(2);
+        context.read<MisGruposCubit>().abandonarGrupo(1);
       },
       style: ButtonStyle(
         backgroundColor: MaterialStateProperty.all<Color>(Colors.black),
