@@ -16,7 +16,6 @@ class MisGruposError extends StatelessWidget {
         ),
         backgroundColor: Colors.black,
         actions: const <Widget>[
-          BotonCasita(text: 'Inicio'),
         ],
       ),
       body: Stack(

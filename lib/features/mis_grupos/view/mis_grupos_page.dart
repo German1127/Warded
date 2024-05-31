@@ -7,6 +7,7 @@ import 'package:untitle/Botones/boton_unirse_grupo.dart';
 import 'package:untitle/Botones/boton_abandonar_grupo.dart';
 import 'package:untitle/Botones/boton_invitar_grupo.dart';
 import 'package:untitle/features/mis_grupos/view/mis_grupos_loading.dart';
+import 'package:untitle/features/mis_grupos/view/mis_grupos_error.dart';
 
 class MisGruposPage extends StatelessWidget {
   const MisGruposPage({super.key});
@@ -14,7 +15,9 @@ class MisGruposPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<MisGruposCubit, MisGruposState>(builder: (context, state){
-      if (state.loadingScreen) {
+      if (state.error != null) {
+        return MisGruposError();
+      } else if (state.loadingScreen) {
         return MisGruposLoading();
       } else {
         final vecinos = state.vecinos;
@@ -29,6 +32,7 @@ class MisGruposPage extends StatelessWidget {
             backgroundColor: Colors.black,
             actions: <Widget>[
               IconButton(onPressed: context.read<MisGruposCubit>().getVecinos, icon: Icon(Icons.refresh)),
+              IconButton(onPressed: context.read<MisGruposCubit>().generarError, icon: Icon(Icons.error)),
             ],
           ),
           body: Stack(
