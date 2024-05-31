@@ -9,10 +9,10 @@ part 'mis_grupos_state.dart';
 class MisGruposCubit extends Cubit<MisGruposState> {
   MisGruposCubit() : super(MisGruposState());
 
-// traer listados de usuarios
+  // traer listados de usuarios
   Future<void> getVecinos() async {
     // emitir loading
-    emit(state.copyWith(loading: true));
+    emit(state.copyWith(loadingScreen: true));
     await Future.delayed(Duration(seconds: 3));
     // base datos
     final List<Vecino> vecinosList = [
@@ -21,21 +21,22 @@ class MisGruposCubit extends Cubit<MisGruposState> {
       Vecino(3, 'Grupo A', 'Novak Djokovic', 'Admin', 'photoUrl'),
     ];
     emit(state.copyWith(
-      loading: false,
+      loadingScreen: false,
       vecinos: vecinosList,
     ));
   }
-// abndonar el grupo
+
+  // abandonar el grupo
   Future<void> abandonarGrupo(int vecinoId) async {
     // emitir loading
-    emit(state.copyWith(loading: true));
+    emit(state.copyWith(loadingScreen: true));
     await Future.delayed(Duration(seconds: 2));
 
     // mira la lista de vecinos para sacar al vecino que se va
     final List<Vecino> ActualizarVecinosList = state.vecinos.where((vecino) => vecino.id != vecinoId).toList();
 
     emit(state.copyWith(
-      loading: false,
+      loadingScreen: false,
       vecinos: ActualizarVecinosList,
     ));
   }

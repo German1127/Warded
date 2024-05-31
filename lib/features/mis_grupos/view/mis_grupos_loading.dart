@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:untitle/Botones/boton_casita.dart';
 
 class MisGruposLoading extends StatelessWidget {
   const MisGruposLoading({super.key});
@@ -16,7 +15,6 @@ class MisGruposLoading extends StatelessWidget {
         ),
         backgroundColor: Colors.black,
         actions: const <Widget>[
-          BotonCasita(text: 'Inicio'),
         ],
       ),
       body: Stack(

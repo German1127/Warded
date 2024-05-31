@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:untitle/Botones/boton_casita.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
 class PaginaQR extends StatefulWidget {

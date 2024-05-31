@@ -2,6 +2,7 @@ part of 'mis_grupos_cubit.dart';
 
 class MisGruposState extends Equatable {
   final bool loading;
+  final bool loadingScreen;
   final bool? idPhoto;
   final String? urlPhoto;
   final String? error;
@@ -9,6 +10,7 @@ class MisGruposState extends Equatable {
 
   const MisGruposState({
     this.loading = false,
+    this.loadingScreen = false,
     this.error,
     this.vecinos = const [],
     this.idPhoto,
@@ -16,20 +18,19 @@ class MisGruposState extends Equatable {
   });
 
   @override
-  List<Object?> get props => [loading, error, vecinos, idPhoto];
-
+  List<Object?> get props => [loading, loadingScreen, error, vecinos, idPhoto];
 
   MisGruposState copyWith({
     bool? loading,
+    bool? loadingScreen,
     bool? idPhoto,
     String? urlPhoto,
     String? error,
     List<Vecino>? vecinos,
-
-})
-  {
+  }) {
     return MisGruposState(
       loading: loading ?? this.loading,
+      loadingScreen: loadingScreen ?? this.loadingScreen,
       error: error ?? this.error,
       vecinos: vecinos ?? this.vecinos,
       idPhoto: idPhoto ?? this.idPhoto,
