@@ -15,8 +15,8 @@ class BotonMapa extends StatelessWidget {
           color: Colors.black,
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(0.0),
-            topRight: Radius.circular(50.0),
-            bottomLeft: Radius.circular(50.0),
+            topRight: Radius.circular(30.0),
+            bottomLeft: Radius.circular(30.0),
             bottomRight: Radius.circular(0.0),
           ),
         ),

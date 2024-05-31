@@ -14,10 +14,10 @@ class BotonSospechoso extends StatelessWidget {
         decoration: const BoxDecoration(
           color: Colors.black,
           borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(50.0),
+            topLeft: Radius.circular(30.0),
             topRight: Radius.circular(0.0),
             bottomLeft: Radius.circular(0.0),
-            bottomRight: Radius.circular(50.0),
+            bottomRight: Radius.circular(30.0),
           ),
         ),
         child: Column(
