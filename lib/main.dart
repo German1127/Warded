@@ -5,6 +5,7 @@ import 'package:untitle/pagina_QR.dart';
 import 'package:untitle/pagina_principal.dart';
 import 'package:untitle/features/mis_grupos/cubic/mis_grupos_cubit.dart';
 import 'package:flutter/services.dart';
+import 'package:untitle/login.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
@@ -33,7 +34,7 @@ class WardedAPP extends StatelessWidget {
           ),
         ),
       ),
-      home: PaginaPrincipal(),
+      home: Login(),
     );
   }
 }

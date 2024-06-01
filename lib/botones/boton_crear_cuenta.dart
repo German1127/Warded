@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:untitle/crear_cuenta.dart';
 
 class BotonCrearCuenta extends StatelessWidget {
   final String text;
@@ -9,7 +10,10 @@ class BotonCrearCuenta extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () {
-        // Aca va la funcion que le des al tocar el boton
+        Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => CrearCuenta())
+        );
       },
       style: ButtonStyle(
         backgroundColor: MaterialStateProperty.all<Color>(Colors.green),
