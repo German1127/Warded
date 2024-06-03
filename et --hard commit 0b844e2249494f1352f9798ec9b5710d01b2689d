@@ -1,0 +1,204 @@
+[33mcommit 0b844e2249494f1352f9798ec9b5710d01b2689d[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mfeat/my_groups[m[33m, [m[1;31morigin/feat/my_groups[m[33m)[m
+Author: German1127 <kleverk2023.com>
+Date:   Sat May 25 19:45:59 2024 -0300
+
+    agregada la navegacion entre pag principal y gruos y t.cond y pag princ
+
+[33mcommit 246d2ecc0e8df3ddafdd19a2c52e8d8c11430ed8[m
+Author: German1127 <kleverk2023.com>
+Date:   Sat May 25 19:11:56 2024 -0300
+
+    agregado el boton de invitar en pagina de usuarios del grupo
+
+[33mcommit 5395dfc4f47dcdae8c195e315034efd2b1451102[m
+Author: German1127 <kleverk2023.com>
+Date:   Sat May 25 18:24:16 2024 -0300
+
+    update and add bloc and cubic
+
+[33mcommit 5eb2667665b1b3223f393bf830642d4f0027084f[m
+Author: German1127 <kleverk2023.com>
+Date:   Sat May 25 17:11:13 2024 -0300
+
+    inicio de la aplicacion con bloc
+
+[33mcommit 38651ecdbdcbb0393f69ab1f40fcc1323da749e4[m
+Author: German1127 <kleverk2023.com>
+Date:   Fri May 24 12:26:54 2024 -0300
+
+    Modificado los botones de alarma para que se manden luego demantener dos segundos
+
+[33mcommit 9616058ed590099ddfe9413fbc50b11799da51e6[m
+Author: German1127 <kleverk2023.com>
+Date:   Fri May 24 12:06:32 2024 -0300
+
+    agregadas pantallas de carga y error
+
+[33mcommit 98a44d7589c8c97a7aaccba207f9cab1adc53e9b[m
+Merge: ac5a1d5 ead6c8a
+Author: German1127 <kleverk2023.com>
+Date:   Thu May 23 20:26:24 2024 -0300
+
+    pagina de grupo con boton hame, unirse y abandonar
+
+[33mcommit ac5a1d50b5a4b8a1d424aa68402aaf7ca71cf6fd[m[33m ([m[1;31morigin/development[m[33m, [m[1;32mdevelopment[m[33m)[m
+Author: German1127 <kleverk2023.com>
+Date:   Thu May 23 16:16:16 2024 -0300
+
+    update main.dart end delete run app for .dart
+
+[33mcommit ead6c8a505253b9ffc20dfe211d6529b91261e45[m[33m ([m[1;31morigin/development_MP[m[33m)[m
+Author: Martin Peruchena <tinoper@gmail.com>
+Date:   Thu May 23 15:08:24 2024 -0300
+
+    feat: creamos feature de mis grupos
+
+[33mcommit a00f1bfac048b1a4f97912c5f6c9acb0f716790c[m
+Author: German1127 <kleverk2023.com>
+Date:   Thu May 23 12:40:23 2024 -0300
+
+    add BotonCasita
+
+[33mcommit 0d9a574638ccc04963c5b43f5e1587bf82b8a4ee[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Author: German1127 <kleverk2023.com>
+Date:   Tue May 21 18:59:31 2024 -0300
+
+    add animation
+
+[33mcommit 10867eacd275db2bcd6c5616014ce8787f4c6061[m
+Author: German1127 <kleverk2023.com>
+Date:   Tue May 21 18:58:54 2024 -0300
+
+    update
+
+[33mcommit ca44be93bdac02614dc3306e15fd815c6c285f17[m
+Author: German1127 <kleverk2023.com>
+Date:   Tue May 21 18:57:54 2024 -0300
+
+    actualized
+
+[33mcommit aee1e016cb265de821f8704bf779a5d41b9b3351[m
+Author: German1127 <kleverk2023.com>
+Date:   Tue May 21 18:57:02 2024 -0300
+
+    update
+
+[33mcommit acaf3fda8837102e925bf85ff0567bdb6a9f8bbb[m
+Author: German1127 <kleverk2023.com>
+Date:   Tue May 21 18:56:13 2024 -0300
+
+    add animation
+
+[33mcommit 6d23dd866601c2bc7fc641e024f2f45a7fa4f5d2[m
+Author: German1127 <kleverk2023.com>
+Date:   Tue May 21 18:54:21 2024 -0300
+
+    actualized icono
+
+[33mcommit 9fa916e512cd76c216608bb0f29a08b8504fef32[m
+Author: German1127 <kleverk2023.com>
+Date:   Tue May 21 14:12:27 2024 -0300
+
+    removed the emulator debug banner
+
+[33mcommit 97aca73668f5cb7fb6d6946888acb97d081340a4[m
+Author: German1127 <kleverk2023.com>
+Date:   Tue May 21 14:10:27 2024 -0300
+
+    removed the emulator debug banner
+
+[33mcommit 097fb2055cbcf4c08d4bfdd12e2526357d33fbe2[m
+Author: German1127 <kleverk2023.com>
+Date:   Tue May 21 14:08:06 2024 -0300
+
+    removed the emulator debug banner
+
+[33mcommit 9fdab971e891e43445703d9eda6550993a7be123[m
+Author: German1127 <kleverk2023.com>
+Date:   Tue May 21 13:57:34 2024 -0300
+
+    update main.dart
+
+[33mcommit c66658c34d127ac45006f856daae682e3d184a21[m
+Author: German1127 <kleverk2023.com>
+Date:   Tue May 21 13:56:13 2024 -0300
+
+    update CrarCuenta.dart
+
+[33mcommit 0512d4c0e999b16be3c6bb93faac43d48790cd58[m
+Author: German1127 <kleverk2023.com>
+Date:   Tue May 21 13:54:45 2024 -0300
+
+    add P. Principal
+
+[33mcommit a61e85057e718416b05aeff625fd93f746c0e39b[m
+Author: German1127 <kleverk2023.com>
+Date:   Tue May 21 13:51:33 2024 -0300
+
+    add butons
+
+[33mcommit 03b2d2652b8b009ce985442690cf20368f363fb8[m
+Author: German1127 <kleverk2023.com>
+Date:   Tue May 21 13:50:12 2024 -0300
+
+    actualized
+
+[33mcommit c3defe21b4706da4c6517969efe678e828dd2779[m
+Author: German1127 <kleverk2023.com>
+Date:   Thu May 16 09:54:47 2024 -0300
+
+    add AgregarFoto
+
+[33mcommit c86d5a5fab4379d7115be4f7c575def6c31dee7e[m
+Author: German1127 <kleverk2023.com>
+Date:   Thu May 16 09:46:08 2024 -0300
+
+    add TerminosCondiciones (no button menu)
+
+[33mcommit 95fcf39269d0d4db25822ff6c6b521210e6577ef[m
+Author: German1127 <kleverk2023.com>
+Date:   Wed May 15 22:00:56 2024 -0300
+
+    add CrearCuenta
+
+[33mcommit 7da81696c33bd6b03db3978c13569a07ea885a21[m
+Author: German1127 <kleverk2023.com>
+Date:   Wed May 15 21:54:57 2024 -0300
+
+    actualized dependencia
+
+[33mcommit c82d89562d48f15243d5841cb25b872a256763eb[m
+Author: German1127 <kleverk2023.com>
+Date:   Wed May 15 21:46:29 2024 -0300
+
+    add campo confirmarPass
+
+[33mcommit 2da7f96fe078f1546f06a4f395353a17af891aef[m
+Author: German1127 <kleverk2023.com>
+Date:   Wed May 15 20:44:12 2024 -0300
+
+    added logo and fixed borders
+
+[33mcommit f79456cde673b3455d58c515b99136681dd383b2[m
+Author: German1127 <kleverk2023.com>
+Date:   Wed Apr 24 10:38:47 2024 -0300
+
+    pronto el registro
+
+[33mcommit 853212bde8515b427249803193419208e7c9b692[m
+Author: German1127 <kleverk2023@gmail.com>
+Date:   Sun Apr 21 08:24:41 2024 -0700
+
+    cambie algunos nombres y genere algunos archivos para el registro
+
+[33mcommit fffdc6523e27f7ee2411a3b1069c63e2684e0bee[m
+Author: German1127 <kleverk2023@gmail.com>
+Date:   Fri Apr 19 13:43:04 2024 -0700
+
+    comit inicial
+
+[33mcommit b8253a590f6ecd4b4eb15e1811b31d58013d975e[m
+Author: German <135636165+German1127@users.noreply.github.com>
+Date:   Fri Apr 19 17:38:49 2024 -0300
+
+    Initial commit
