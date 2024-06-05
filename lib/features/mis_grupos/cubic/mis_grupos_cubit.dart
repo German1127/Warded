@@ -17,10 +17,13 @@ class MisGruposCubit extends Cubit<MisGruposState> {
       await Future.delayed(Duration(seconds: 3));
       // base datos
       final List<Vecino> vecinosList = [
-        Vecino(1, 'Grupo A', 'Rafael Nadal', 'Admin', 'photoUrl'),
-        Vecino(2, 'Grupo A', 'Roger Federer', 'Admin', 'photoUrl'),
-        Vecino(3, 'Grupo A', 'Novak Djokovic', 'Admin', 'photoUrl'),
+        Vecino('1', 'Grupo A', 'Rafael Nadal', 'Admin', 'photoUrl'),
+        Vecino('2', 'Grupo A', 'Roger Federer', 'Admin', 'photoUrl'),
+        Vecino('3', 'Grupo A', 'Novak Djokovic', 'Admin', 'photoUrl'),
       ];
+
+      vecinosList[2].toFirestore();
+
       emit(state.copyWith(
         loadingScreen: false,
         vecinos: vecinosList,
@@ -53,3 +56,4 @@ class MisGruposCubit extends Cubit<MisGruposState> {
     emit(state.copyWith(error: 'Este es un error de prueba'));
   }
 }
+

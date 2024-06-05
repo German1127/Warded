@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "112747563530",
+    "project_id": "warded-6792f",
+    "storage_bucket": "warded-6792f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:112747563530:android:64e752e064ef6b200cadf3",
+        "android_client_info": {
+          "package_name": "com.example.untitle"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBcgKY3vFf5uvbWZ-FdWFjxy8IdAzvl0g4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
