@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class BotonMapa extends StatelessWidget {
+  const BotonMapa({super.key});
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class BotonSospechoso extends StatelessWidget {
+  const BotonSospechoso({super.key});
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(

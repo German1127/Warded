@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class BotonControlPolicial extends StatelessWidget {
+  const BotonControlPolicial({super.key});
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(

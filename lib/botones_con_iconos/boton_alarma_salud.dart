@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class BotonAlarmaSalud extends StatefulWidget {
+  const BotonAlarmaSalud({super.key});
+
   @override
   _BotonAlarmaSaludDestello createState() => _BotonAlarmaSaludDestello();
 }
@@ -11,26 +13,26 @@ class _BotonAlarmaSaludDestello extends State<BotonAlarmaSalud> with SingleTicke
   @override
   void initState() {
     super.initState();
-    Future.delayed(Duration(seconds: 1), _changeColor);
+    Future.delayed(const Duration(seconds: 1), _changeColor);
   }
 
   void _changeColor() {
     setState(() {
       _isRed = !_isRed;
     });
-    Future.delayed(Duration(seconds: 1), _changeColor);
+    Future.delayed(const Duration(seconds: 1), _changeColor);
   }
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onLongPress: () {
-        Future.delayed(Duration(seconds: 2), () {
+        Future.delayed(const Duration(seconds: 2), () {
           print('¡Se manda luego de mantenerlo 2 segundos!');
         });
       },
       child: AnimatedContainer(
-        duration: Duration(milliseconds: 1000),
+        duration: const Duration(milliseconds: 1000),
         width: 50.0,
         height: 50.0,
         padding: const EdgeInsets.all(0.5),

@@ -4,7 +4,7 @@ import 'package:untitle/pagina_principal.dart';
 class BotonCasita extends StatelessWidget {
   final String text;
 
-  const BotonCasita({Key? key, required this.text}) : super(key: key);
+  const BotonCasita({super.key, required this.text});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class BotonCasita extends StatelessWidget {
       onPressed: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => PaginaPrincipal()),
+          MaterialPageRoute(builder: (context) => const PaginaPrincipal()),
         );
       },
     );

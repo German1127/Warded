@@ -4,7 +4,7 @@ import 'package:barcode_scan2/barcode_scan2.dart';
 class BotonUnirseGrupo extends StatelessWidget {
   final String text;
 
-  const BotonUnirseGrupo({Key? key, required this.text}) : super(key: key);
+  const BotonUnirseGrupo({super.key, required this.text});
 
   Future<void> scanQR() async {
     try {
@@ -22,7 +22,7 @@ class BotonUnirseGrupo extends StatelessWidget {
         scanQR();
       },
       style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all<Color>(Colors.black),
+        backgroundColor: WidgetStateProperty.all<Color>(Colors.black),
       ),
       child: Text(
         text,

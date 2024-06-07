@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class BotonCalleCerrada extends StatelessWidget {
+  const BotonCalleCerrada({super.key});
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(

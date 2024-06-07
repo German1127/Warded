@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class BotonAnimalAbandonado extends StatelessWidget {
+  const BotonAnimalAbandonado({super.key});
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(

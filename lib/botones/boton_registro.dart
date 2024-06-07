@@ -4,7 +4,7 @@ import 'package:untitle/pagina_principal.dart';
 class BotonRegistro extends StatelessWidget {
   final String text;
 
-  const BotonRegistro({Key? key, required this.text}) : super(key: key);
+  const BotonRegistro({super.key, required this.text});
 
   @override
   Widget build(BuildContext context) {
@@ -12,11 +12,11 @@ class BotonRegistro extends StatelessWidget {
       onPressed: () {
         Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => PaginaPrincipal())
+            MaterialPageRoute(builder: (context) => const PaginaPrincipal())
         );
       },
       style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all<Color>(Colors.green),
+        backgroundColor: WidgetStateProperty.all<Color>(Colors.green),
       ),
       child: Text(
         text,

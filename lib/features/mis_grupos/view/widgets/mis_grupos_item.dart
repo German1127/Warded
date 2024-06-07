@@ -39,14 +39,14 @@ class MisGruposItem extends StatelessWidget {
               children: [
                 Text(
                   vecino.nombre,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 20,
                     color: Colors.green,
                   ),
                 ),
                 Text(
                   vecino.rol,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 20,
                     color: Colors.white,
                   ),

@@ -15,9 +15,9 @@ class MisGruposPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<MisGruposCubit, MisGruposState>(builder: (context, state){
       if (state.error != null) {
-        return MisGruposError();
+        return const MisGruposError();
       } else if (state.loadingScreen) {
-        return MisGruposLoading();
+        return const MisGruposLoading();
       } else {
         final vecinos = state.vecinos;
         return Scaffold(
@@ -30,8 +30,8 @@ class MisGruposPage extends StatelessWidget {
             ),
             backgroundColor: Colors.black,
             actions: <Widget>[
-              IconButton(onPressed: context.read<MisGruposCubit>().getVecinos, icon: Icon(Icons.refresh)),
-              IconButton(onPressed: context.read<MisGruposCubit>().generarError, icon: Icon(Icons.error)),
+              IconButton(onPressed: context.read<MisGruposCubit>().getVecinos, icon: const Icon(Icons.refresh)),
+              IconButton(onPressed: context.read<MisGruposCubit>().generarError, icon: const Icon(Icons.error)),
             ],
           ),
           body: Stack(
@@ -45,7 +45,7 @@ class MisGruposPage extends StatelessWidget {
                 ),
               ),
               (state.loading)
-                  ? CircularProgressIndicator():
+                  ? const CircularProgressIndicator():
               Column(
                 children: [
                   Padding(
@@ -69,7 +69,7 @@ class MisGruposPage extends StatelessWidget {
                     ),
                   ),
                   const Padding(
-                    padding: const EdgeInsets.only(left: 20.0),
+                    padding: EdgeInsets.only(left: 20.0),
                     child: Align(
                       alignment: Alignment.centerLeft,
                       child: Text(

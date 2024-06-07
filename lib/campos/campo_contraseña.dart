@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CampoPass extends StatefulWidget {
-  const CampoPass({Key? key}) : super(key: key);
+  const CampoPass({super.key});
 
   @override
   CampoPassState createState() => CampoPassState();

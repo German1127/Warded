@@ -6,7 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class BotonAbandonarGrupo extends StatelessWidget {
   final String text;
 
-  const BotonAbandonarGrupo({Key? key, required this.text}) : super(key: key);
+  const BotonAbandonarGrupo({super.key, required this.text});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class BotonAbandonarGrupo extends StatelessWidget {
         context.read<MisGruposCubit>().abandonarGrupo(1);
       },
       style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all<Color>(Colors.black),
+        backgroundColor: WidgetStateProperty.all<Color>(Colors.black),
       ),
       child: Text(
         text,

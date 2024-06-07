@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:untitle/terminos_condiciones.dart';
-import 'botones_con_iconos/boton_terminos_condiciones.dart';
 import 'botones_con_iconos/boton_alarma.dart';
 import 'botones_con_iconos/boton_alarma_salud.dart';
 import 'botones_con_iconos/boton_accidente.dart';
@@ -12,9 +11,10 @@ import 'botones_con_iconos/boton_grupo.dart';
 import 'botones_con_iconos/boton_mapa.dart';
 import 'botones_con_iconos/boton_sospechoso.dart';
 import 'botones_con_iconos/boton_trafico.dart';
-import 'botones_con_iconos/boton_actualizar_perfil.dart';
 
 class PaginaPrincipal extends StatelessWidget {
+  const PaginaPrincipal({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,16 +28,16 @@ class PaginaPrincipal extends StatelessWidget {
         backgroundColor: Colors.black,
         actions: <Widget>[
           IconButton(
-            icon: Icon(Icons.description),
+            icon: const Icon(Icons.description),
             color: Colors.green,
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => TerminosCondiciones()),
+                MaterialPageRoute(builder: (context) => const TerminosCondiciones()),
               );
             },
           ),
-          IconButton(onPressed:(){}, color: Colors.green, icon: Icon(Icons.update)),
+          IconButton(onPressed:(){}, color: Colors.green, icon: const Icon(Icons.update)),
         ],
       ),
       body: Stack(
@@ -59,7 +59,7 @@ class PaginaPrincipal extends StatelessWidget {
               color: Colors.black.withOpacity(1.0),
               margin: const EdgeInsets.only(top: 5.0, left: 0.0, right: 0.0),
               padding: const EdgeInsets.all(0.100),
-              child: Row(
+              child: const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
                   Expanded(
@@ -83,7 +83,7 @@ class PaginaPrincipal extends StatelessWidget {
             child: Container(
               margin: const EdgeInsets.only(top: 5.0, left: 20.0, right: 20.0),
               padding: const EdgeInsets.all(0.100),
-              child: Column(
+              child: const Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
                   Row(

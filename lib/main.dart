@@ -6,6 +6,7 @@ import 'package:untitle/login.dart';
 import 'firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 
 final db = FirebaseFirestore.instance;
 
@@ -18,15 +19,27 @@ void main() async {
     systemNavigationBarColor: Colors.black,
   ));
 
+  FirebaseMessaging messaging = FirebaseMessaging.instance;
+  NotificationSettings settings = await messaging.requestPermission(
+    alert: true,
+    badge: true,
+    sound: true,
+  );
+
+  String? token = await messaging.getToken();
+  print('Token de notificación: $token');
+
   runApp(
     BlocProvider(
       create: (context) => MisGruposCubit()..getVecinos(),
-      child: WardedAPP(),
+      child: const WardedAPP(),
     ),
   );
 }
 
 class WardedAPP extends StatelessWidget {
+  const WardedAPP({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -40,7 +53,7 @@ class WardedAPP extends StatelessWidget {
           ),
         ),
       ),
-      home: Login(),
+      home: const Login(),
     );
   }
 }
