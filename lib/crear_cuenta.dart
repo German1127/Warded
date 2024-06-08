@@ -48,7 +48,7 @@ class _ImageInputState extends State<ImageInput> {
           child: _storedImage != null
               ? Image.file(
             _storedImage!,
-            fit: BoxFit.cover,
+            fit: BoxFit.fill,
             width: double.infinity,
           )
               : const Text(
