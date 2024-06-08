@@ -12,6 +12,7 @@ void main() {
     systemNavigationBarColor: Colors.black,
   ));
 
+
   runApp(
     BlocProvider(
       create: (context) => MisGruposCubit()..getVecinos(),
