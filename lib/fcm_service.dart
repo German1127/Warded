@@ -18,9 +18,9 @@ class FCMService {
 
   Future<void> saveTokenToFirestore(String token) async {
     try {
-      final currentUser = FirebaseFirestore.instance.collection('users').doc('userId');
+      final userCollection = FirebaseFirestore.instance.collection('users');
 
-      await currentUser.set({'token': token});
+      await userCollection.add({'token': token});
     } catch (e) {
       print('Error al guardar el token en Firestore: $e');
     }

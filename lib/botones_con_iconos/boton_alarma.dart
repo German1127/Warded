@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'notification_service.dart';
 
 class BotonAlarma extends StatefulWidget {
   @override
@@ -7,6 +8,7 @@ class BotonAlarma extends StatefulWidget {
 
 class _BotonAlarmaDestello extends State<BotonAlarma> with SingleTickerProviderStateMixin {
   bool _isRed = true;
+  final NotificationService _notificationService = NotificationService();
 
   @override
   void initState() {
@@ -25,8 +27,9 @@ class _BotonAlarmaDestello extends State<BotonAlarma> with SingleTickerProviderS
   Widget build(BuildContext context) {
     return GestureDetector(
       onLongPress: () {
-        Future.delayed(Duration(seconds: 2), () {
-          print('¡corre luego de 2 segundos apretado!');
+        Future.delayed(Duration(seconds: 2), () async {
+          print('¡Se manda luego de mantenerlo 2 segundos!');
+          await _notificationService.sendNotification('Mensaje de emergencia');
         });
       },
       child: AnimatedContainer(
