@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:untitle/features/mis_grupos/cubic/mis_grupos_cubit.dart';
+import 'package:flutter/services.dart';
 import 'package:untitle/login.dart';
-import 'package:untitle/fcm_service.dart';
 import 'firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'fcm_service.dart'; // Importa el servicio FCM
 
 final db = FirebaseFirestore.instance;
 
@@ -20,7 +19,9 @@ void main() async {
     systemNavigationBarColor: Colors.black,
   ));
 
-  FCMService().initializeFCM();
+  // Inicializa el servicio FCM
+  FCMService fcmService = FCMService();
+  String? token = await fcmService.getTokenAndSaveToFirestore();
 
   runApp(
     BlocProvider(
