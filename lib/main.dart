@@ -7,6 +7,7 @@ import 'firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
+import 'fcm_service.dart';
 
 final db = FirebaseFirestore.instance;
 
@@ -19,15 +20,10 @@ void main() async {
     systemNavigationBarColor: Colors.black,
   ));
 
-  FirebaseMessaging messaging = FirebaseMessaging.instance;
-  NotificationSettings settings = await messaging.requestPermission(
-    alert: true,
-    badge: true,
-    sound: true,
-  );
 
-  String? token = await messaging.getToken();
-  print('Token de notificación: $token');
+  // Inicializa el servicio FCM
+  FCMService fcmService = FCMService();
+  String? token = await fcmService.getTokenAndSaveToFirestore();
 
   runApp(
     BlocProvider(
