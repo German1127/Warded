@@ -19,14 +19,13 @@ class NotificationService {
     }
 
     final response = await http.post(
-      Uri.parse('https://779f-2800-a4-8ae-5700-2df9-32ba-67ac-d73a.ngrok-free.app/send-notification'),
+      Uri.parse('https://3c35-2800-a4-9c6-1e00-2572-747-c4dd-5560.ngrok-free.app/send-notification'),
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',
       },
       body: jsonEncode(<String, dynamic>{
         'tokens': tokens,
         'message': message,
-        'senderToken': senderToken,
       }),
     );
 

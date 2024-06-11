@@ -18,14 +18,20 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-    systemNavigationBarColor: Colors.black,
-  ));
 
-  FCMService fcmService = FCMService();
-  String? token = await fcmService.getTokenAndSaveToFirestore();
+  FirebaseMessaging.onMessage.listen((RemoteMessage message) {
+    print('Recibí el mensaje en primer planito');
+    print('Datos del mensaje: ${message.data}');
 
-  await setupInteractedMessage();
+    if (message.notification != null) {
+      print('El mensaje también contenía una notificación: ${message.notification}');
+    }
+  });
+
+  FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
+    print('Se ha publicado un nuevo evento onMessageOpenedApp');
+    _handleMessage(message);
+  });
 
   runApp(
     BlocProvider(
@@ -33,12 +39,6 @@ void main() async {
       child: WardedAPP(),
     ),
   );
-}
-
-Future<void> setupInteractedMessage() async {
-  FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
-    _handleMessage(message);
-  });
 }
 
 void _handleMessage(RemoteMessage message) {
