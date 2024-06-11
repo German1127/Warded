@@ -1,15 +1,15 @@
 import 'package:untitle/main.dart';
 
 class Vecino {
-  final String id;
-  final String? groupName;
+  String id;
+  String? groupId;
   final String nombre;
   final String rol;
   final String? photoUrl;
 
   Vecino(
       this.id,
-      this.groupName,
+      this.groupId,
       this.nombre,
       this.rol,
       this.photoUrl,
@@ -17,7 +17,7 @@ class Vecino {
 
   void toFirestore() async {
     final v = <String, dynamic>{
-      "groupName": groupName,
+      "groupId": groupId,
       "name": nombre,
       "rol": rol,
       "photoUrl": photoUrl
@@ -27,7 +27,8 @@ class Vecino {
       await db.collection("vecinos").doc(id).set(v);
 
     } else {
-      await db.collection("vecinos").add(v);
+      final ref = await db.collection("vecinos").add(v);
+      id = ref.id;
     }
   }
 
@@ -38,7 +39,7 @@ class Vecino {
 
     var nuevo = Vecino(
       snap.id,
-      data["groupName"],
+      data["groupId"],
       data["name"],
       data["rol"],
       data["photoUrl"],

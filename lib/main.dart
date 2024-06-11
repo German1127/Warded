@@ -3,12 +3,16 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:untitle/features/mis_grupos/cubic/mis_grupos_cubit.dart';
 import 'package:flutter/services.dart';
 import 'package:untitle/login.dart';
+import 'features/mis_grupos/models/vecino.dart';
+import 'features/mis_grupos/models/grupo.dart';
 import 'firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 
 final db = FirebaseFirestore.instance;
+Vecino currentUser = Vecino("","","","","");
+Grupo currentGroup = Grupo("",[]);
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
