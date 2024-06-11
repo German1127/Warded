@@ -30,8 +30,8 @@ class MisGruposPage extends StatelessWidget {
             ),
             backgroundColor: Colors.black,
             actions: <Widget>[
-              IconButton(onPressed: context.read<MisGruposCubit>().getVecinos, icon: const Icon(Icons.refresh)),
-              IconButton(onPressed: context.read<MisGruposCubit>().generarError, icon: const Icon(Icons.error)),
+              // IconButton(onPressed: context.read<MisGruposCubit>().getVecinos, icon: const Icon(Icons.refresh)),
+              // IconButton(onPressed: context.read<MisGruposCubit>().generarError, icon: const Icon(Icons.error)),
             ],
           ),
           body: Stack(

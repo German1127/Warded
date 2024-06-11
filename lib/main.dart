@@ -28,13 +28,40 @@ void main() async {
   // notificaciones locales
   AndroidInitializationSettings initializationSettingsAndroid = AndroidInitializationSettings('logo');
   InitializationSettings initializationSettings = InitializationSettings(android: initializationSettingsAndroid);
-  await flutterLocalNotificationsPlugin.initialize(initializationSettings);
+  await flutterLocalNotificationsPlugin.initialize(initializationSettings, onDidReceiveNotificationResponse: selectNotification);
 
   runApp(
     BlocProvider(
       create: (context) => MisGruposCubit()..getVecinos(),
       child: WardedAPP(),
     ),
+  );
+}
+
+void selectNotification(NotificationResponse response) async {
+  String googleMapsUrl = "https://www.google.com/maps/search/?api=1&query=Celebra+Zonamerica+Uruguay";
+  if (await canLaunch(googleMapsUrl)) {
+    await launch(googleMapsUrl);
+  } else {
+    throw 'No se pudo abrir Google Maps';
+  }
+}
+
+Future<void> showNotification() async {
+  AndroidNotificationDetails androidNotificationDetails = const AndroidNotificationDetails(
+    'canal_de_mensaje',
+    'Notificaciones de mensajes',
+    importance: Importance.max,
+    priority: Priority.high,
+  );
+
+  NotificationDetails notificationDetails = NotificationDetails(android: androidNotificationDetails);
+
+  await flutterLocalNotificationsPlugin.show(
+    1,
+    'Warded',
+    'Esta es una notificación de prueba XD',
+    notificationDetails,
   );
 }
 
@@ -54,31 +81,5 @@ class WardedAPP extends StatelessWidget {
       ),
       home: Login(),
     );
-  }
-}
-
-// mostrar la notificación
-Future<void> showNotification() async {
-  AndroidNotificationDetails androidNotificationDetails = const AndroidNotificationDetails(
-    'canal_de_mensaje',
-    'Notificaciones de mensajes',
-    importance: Importance.max,
-    priority: Priority.high,
-  );
-
-  NotificationDetails notificationDetails = NotificationDetails(android: androidNotificationDetails);
-
-  await flutterLocalNotificationsPlugin.show(
-    1,
-    'Warded',
-    'Esta es una notificación de prueba XD',
-    notificationDetails,
-  );
-
-  String googleMapsUrl = "https://www.google.com/maps/search/?api=1&query=Celebra+Zonamerica+Uruguay";
-  if (await canLaunch(googleMapsUrl)) {
-    await launch(googleMapsUrl);
-  } else {
-    throw 'No se pudo abrir Google Maps';
   }
 }
