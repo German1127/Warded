@@ -11,6 +11,9 @@ import 'botones_con_iconos/boton_grupo.dart';
 import 'botones_con_iconos/boton_mapa.dart';
 import 'botones_con_iconos/boton_sospechoso.dart';
 import 'botones_con_iconos/boton_trafico.dart';
+import 'package:untitle/main.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+
 
 class PaginaPrincipal extends StatelessWidget {
   const PaginaPrincipal({super.key});
@@ -37,7 +40,11 @@ class PaginaPrincipal extends StatelessWidget {
               );
             },
           ),
-          IconButton(onPressed:(){}, color: Colors.green, icon: const Icon(Icons.update)),
+          IconButton(
+              onPressed: (){showNotification();},
+              color: Colors.green,
+              icon: const Icon(Icons.notifications)
+          ),
         ],
       ),
       body: Stack(

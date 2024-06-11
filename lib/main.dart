@@ -7,8 +7,10 @@ import 'firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'fcm_service.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
 final db = FirebaseFirestore.instance;
+final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,6 +24,10 @@ void main() async {
   FCMService fcmService = FCMService();
   String? token = await fcmService.getTokenAndSaveToFirestore();
 
+  // notificaciones locales
+  AndroidInitializationSettings initializationSettingsAndroid = AndroidInitializationSettings('../assets/Logo.jpg');
+  InitializationSettings initializationSettings = InitializationSettings(android: initializationSettingsAndroid);
+  await flutterLocalNotificationsPlugin.initialize(initializationSettings);
 
   runApp(
     BlocProvider(
@@ -48,4 +54,23 @@ class WardedAPP extends StatelessWidget {
       home: Login(),
     );
   }
+}
+
+// mostrar la notificación
+Future<void> showNotification() async {
+  AndroidNotificationDetails androidNotificationDetails = const AndroidNotificationDetails(
+    'canal_de_mensaje',
+    'Notificaciones de mensajes',
+    importance: Importance.max,
+    priority: Priority.high,
+  );
+
+  NotificationDetails notificationDetails = NotificationDetails(android: androidNotificationDetails);
+
+  await flutterLocalNotificationsPlugin.show(
+    1,
+    'Warded',
+    'Esta es una notificación de prueba XD',
+    notificationDetails,
+  );
 }
