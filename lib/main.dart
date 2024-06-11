@@ -8,6 +8,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'fcm_service.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 final db = FirebaseFirestore.instance;
 final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
@@ -73,4 +74,11 @@ Future<void> showNotification() async {
     'Esta es una notificación de prueba XD',
     notificationDetails,
   );
+
+  String googleMapsUrl = "https://www.google.com/maps/search/?api=1&query=Celebra+Zonamerica+Uruguay";
+  if (await canLaunch(googleMapsUrl)) {
+    await launch(googleMapsUrl);
+  } else {
+    throw 'No se pudo abrir Google Maps';
+  }
 }
