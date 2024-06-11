@@ -8,7 +8,6 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'fcm_service.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
-import 'mapa.dart';
 
 final db = FirebaseFirestore.instance;
 final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
@@ -18,7 +17,6 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
     systemNavigationBarColor: Colors.black,
   ));
@@ -26,12 +24,10 @@ void main() async {
   FCMService fcmService = FCMService();
   String? token = await fcmService.getTokenAndSaveToFirestore();
 
+  // notificaciones locales
   AndroidInitializationSettings initializationSettingsAndroid = AndroidInitializationSettings('logo');
   InitializationSettings initializationSettings = InitializationSettings(android: initializationSettingsAndroid);
-
-  await flutterLocalNotificationsPlugin.initialize(
-    initializationSettings,
-  );
+  await flutterLocalNotificationsPlugin.initialize(initializationSettings);
 
   runApp(
     BlocProvider(
@@ -60,6 +56,7 @@ class WardedAPP extends StatelessWidget {
   }
 }
 
+// mostrar la notificación
 Future<void> showNotification() async {
   AndroidNotificationDetails androidNotificationDetails = const AndroidNotificationDetails(
     'canal_de_mensaje',
@@ -73,23 +70,7 @@ Future<void> showNotification() async {
   await flutterLocalNotificationsPlugin.show(
     1,
     'Warded',
-    'Se apretó el botón en esta ubicación',
+    'Esta es una notificación de prueba XD',
     notificationDetails,
-    payload: 'mapa',
   );
-  runApp(MapScreenApp());
-}
-
-class MapScreenApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Mapa',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: MapScreen(),
-    );
-  }
 }

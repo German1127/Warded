@@ -5,14 +5,15 @@ import 'botones_con_iconos/boton_alarma_salud.dart';
 import 'botones_con_iconos/boton_accidente.dart';
 import 'botones_con_iconos/boton_animal_abandonado.dart';
 import 'botones_con_iconos/boton_bache.dart';
-import 'botones_con_iconos/boton_trafico.dart';
-import 'botones_con_iconos/boton_sospechoso.dart';
 import 'botones_con_iconos/boton_calle_cerrada.dart';
 import 'botones_con_iconos/boton_control_policial.dart';
 import 'botones_con_iconos/boton_grupo.dart';
 import 'botones_con_iconos/boton_mapa.dart';
+import 'botones_con_iconos/boton_sospechoso.dart';
+import 'botones_con_iconos/boton_trafico.dart';
 import 'package:untitle/main.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+
 
 class PaginaPrincipal extends StatelessWidget {
   const PaginaPrincipal({super.key});
