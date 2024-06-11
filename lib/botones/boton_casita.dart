@@ -16,7 +16,7 @@ class BotonCasita extends StatelessWidget {
       onPressed: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => const PaginaPrincipal()),
+          MaterialPageRoute(builder: (context) => PaginaPrincipal()),
         );
       },
     );

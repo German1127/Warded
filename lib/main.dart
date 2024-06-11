@@ -6,7 +6,6 @@ import 'package:untitle/login.dart';
 import 'firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_messaging/firebase_messaging.dart';
 import 'fcm_service.dart';
 
 final db = FirebaseFirestore.instance;
@@ -20,22 +19,19 @@ void main() async {
     systemNavigationBarColor: Colors.black,
   ));
 
-
-  // Inicializa el servicio FCM
   FCMService fcmService = FCMService();
   String? token = await fcmService.getTokenAndSaveToFirestore();
+
 
   runApp(
     BlocProvider(
       create: (context) => MisGruposCubit()..getVecinos(),
-      child: const WardedAPP(),
+      child: WardedAPP(),
     ),
   );
 }
 
 class WardedAPP extends StatelessWidget {
-  const WardedAPP({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -49,7 +45,7 @@ class WardedAPP extends StatelessWidget {
           ),
         ),
       ),
-      home: const Login(),
+      home: Login(),
     );
   }
 }
