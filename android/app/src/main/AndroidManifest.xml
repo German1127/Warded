@@ -2,6 +2,9 @@
     <!-- Añade el permiso de cámara aquí -->
     <uses-permission android:name="android.permission.CAMERA" />
 
+    <!-- Añade el permiso para la notificacion -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+
     <application
         android:label="untitle"
         android:name="${applicationName}"

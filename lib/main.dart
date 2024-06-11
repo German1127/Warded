@@ -25,7 +25,7 @@ void main() async {
   String? token = await fcmService.getTokenAndSaveToFirestore();
 
   // notificaciones locales
-  AndroidInitializationSettings initializationSettingsAndroid = AndroidInitializationSettings('../assets/Logo.jpg');
+  AndroidInitializationSettings initializationSettingsAndroid = AndroidInitializationSettings('logo');
   InitializationSettings initializationSettings = InitializationSettings(android: initializationSettingsAndroid);
   await flutterLocalNotificationsPlugin.initialize(initializationSettings);
 
