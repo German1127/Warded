@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:untitle/pagina_QR.dart';
+import 'package:Warded/pagina_QR.dart';
 
 class BotonInvitarGrupo extends StatelessWidget {
   final String text;

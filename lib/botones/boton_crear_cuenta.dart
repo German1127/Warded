@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:untitle/crear_cuenta.dart';
+import 'package:Warded/crear_cuenta.dart';
 
 class BotonCrearCuenta extends StatelessWidget {
   final String text;

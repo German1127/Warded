@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:untitle/terminos_condiciones.dart';
+import 'package:Warded/terminos_condiciones.dart';
 import 'botones_con_iconos/boton_alarma.dart';
 import 'botones_con_iconos/boton_alarma_salud.dart';
 import 'botones_con_iconos/boton_accidente.dart';
@@ -11,7 +11,7 @@ import 'botones_con_iconos/boton_grupo.dart';
 import 'botones_con_iconos/boton_mapa.dart';
 import 'botones_con_iconos/boton_sospechoso.dart';
 import 'botones_con_iconos/boton_trafico.dart';
-import 'package:untitle/main.dart';
+import 'package:Warded/main.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
 

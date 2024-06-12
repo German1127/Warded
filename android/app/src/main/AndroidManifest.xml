@@ -4,9 +4,14 @@
 
     <!-- Añade el permiso para la notificacion -->
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+
+
 
     <application
-        android:label="untitle"
+        android:label="Warded"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

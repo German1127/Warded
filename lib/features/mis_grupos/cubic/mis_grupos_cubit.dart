@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:untitle/features/mis_grupos/models/vecino.dart';
+import 'package:Warded/features/mis_grupos/models/vecino.dart';
 
 part 'mis_grupos_state.dart';
 

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:untitle/features/mis_grupos/models/vecino.dart';
+import 'package:Warded/features/mis_grupos/models/vecino.dart';
 
 class MisGruposItem extends StatelessWidget {
   const MisGruposItem({
