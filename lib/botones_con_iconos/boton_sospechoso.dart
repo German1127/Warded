@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:Warded/funciones_notificacion.dart';
 
 class BotonSospechoso extends StatelessWidget {
   const BotonSospechoso({super.key});
@@ -7,7 +8,7 @@ class BotonSospechoso extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        print('¡Aca pongan lo que quieran que haga el boton SIN EL PRINT!');
+        {showNotification();}
       },
       child: Container(
         width: 100.0,

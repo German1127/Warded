@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:Warded/funciones_notificacion.dart';
 
 class BotonAlarma extends StatefulWidget {
   const BotonAlarma({super.key});
@@ -28,7 +29,7 @@ class _BotonAlarmaDestello extends State<BotonAlarma> with SingleTickerProviderS
     return GestureDetector(
       onLongPress: () {
         Future.delayed(const Duration(seconds: 2), () {
-          print('¡corre luego de 2 segundos apretado!');
+          {showNotificationAlarm();}
         });
       },
       child: AnimatedContainer(
