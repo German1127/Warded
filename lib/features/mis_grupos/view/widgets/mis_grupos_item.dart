@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:untitle/features/mis_grupos/models/vecino.dart';
+import 'package:Warded/features/mis_grupos/models/vecino.dart';
 
 class MisGruposItem extends StatelessWidget {
   const MisGruposItem({
@@ -39,14 +39,14 @@ class MisGruposItem extends StatelessWidget {
               children: [
                 Text(
                   vecino.nombre,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 20,
                     color: Colors.green,
                   ),
                 ),
                 Text(
                   vecino.rol,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 20,
                     color: Colors.white,
                   ),

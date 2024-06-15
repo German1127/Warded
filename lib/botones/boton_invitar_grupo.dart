@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:untitle/pagina_QR.dart';
+import 'package:Warded/pagina_QR.dart';
 
 class BotonInvitarGrupo extends StatelessWidget {
   final String text;
 
-  const BotonInvitarGrupo({Key? key, required this.text}) : super(key: key);
+  const BotonInvitarGrupo({super.key, required this.text});
 
   @override
   Widget build(BuildContext context) {
@@ -12,11 +12,11 @@ class BotonInvitarGrupo extends StatelessWidget {
       onPressed: () {
         Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => PaginaQR()),
+            MaterialPageRoute(builder: (context) => const PaginaQR()),
         );
       },
       style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all<Color>(Colors.black),
+        backgroundColor: WidgetStateProperty.all<Color>(Colors.black),
       ),
       child: Text(
         text,

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'botones/boton_casita.dart';
 
 class TerminosCondiciones extends StatelessWidget {
+  const TerminosCondiciones({super.key});
+
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;

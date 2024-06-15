@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:untitle/pagina_principal.dart';
+import 'package:Warded/pagina_principal.dart';
 
 class BotonCasita extends StatelessWidget {
   final String text;
 
-  const BotonCasita({Key? key, required this.text}) : super(key: key);
+  const BotonCasita({super.key, required this.text});
 
   @override
   Widget build(BuildContext context) {

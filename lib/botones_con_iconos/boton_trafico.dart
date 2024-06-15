@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:Warded/funciones_notificacion.dart';
 
 class BotonTrafico extends StatelessWidget {
+  const BotonTrafico({super.key});
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        print('¡Aca pongan lo que quieran que haga el boton SIN EL PRINT!');
+        {showNotification();}
       },
       child: Container(
         width: 100.0,

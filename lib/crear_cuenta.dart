@@ -7,6 +7,8 @@ import 'Campos/campo_registro_confirmar_pass.dart';
 import 'Botones/boton_registro.dart';
 
 class ImageInput extends StatefulWidget {
+  const ImageInput({super.key});
+
   @override
   _ImageInputState createState() => _ImageInputState();
 }
@@ -15,8 +17,8 @@ class _ImageInputState extends State<ImageInput> {
   File? _storedImage;
 
   Future<void> _takePicture() async {
-    final ImagePicker _picker = ImagePicker();
-    final XFile? imageFile = await _picker.pickImage(
+    final ImagePicker picker = ImagePicker();
+    final XFile? imageFile = await picker.pickImage(
       source: ImageSource.gallery,
       maxWidth: 600,
     );
@@ -42,22 +44,22 @@ class _ImageInputState extends State<ImageInput> {
           decoration: BoxDecoration(
             border: Border.all(width: 1, color: Colors.grey),
           ),
+          alignment: Alignment.center,
           child: _storedImage != null
               ? Image.file(
             _storedImage!,
-            fit: BoxFit.cover,
+            fit: BoxFit.fill,
             width: double.infinity,
           )
-              : Text(
+              : const Text(
             'Ninguna imagen seleccionada',
             textAlign: TextAlign.center,
             style: TextStyle(color: Colors.green),
           ),
-          alignment: Alignment.center,
         ),
         TextButton.icon(
-          icon: Icon(Icons.image),
-          label: Text('Selecciona una imagen de tu Galeria', style: TextStyle(fontSize: 15)),
+          icon: const Icon(Icons.image),
+          label: const Text('Selecciona una imagen de tu Galeria', style: TextStyle(fontSize: 15)),
           style: TextButton.styleFrom(
             foregroundColor: Colors.green,
           ),
@@ -69,6 +71,8 @@ class _ImageInputState extends State<ImageInput> {
 }
 
 class CrearCuenta extends StatelessWidget {
+  const CrearCuenta({super.key});
+
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
@@ -98,13 +102,13 @@ class CrearCuenta extends StatelessWidget {
                   ),
                 ),
                 child: Padding(
-                  padding: EdgeInsets.all(20.0),
+                  padding: const EdgeInsets.all(20.0),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      Container(
+                      SizedBox(
                         height: screenSize.height * 0.3,
-                        child: ImageInput(),
+                        child: const ImageInput(),
                       ),
                       const SizedBox(height: 0.0),
                       const CampoRegistroNombre(labelText: 'Nombre'),

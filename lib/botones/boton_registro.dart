@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:untitle/pagina_principal.dart';
+import 'package:Warded/pagina_principal.dart';
 
 class BotonRegistro extends StatelessWidget {
   final String text;
 
-  const BotonRegistro({Key? key, required this.text}) : super(key: key);
+  const BotonRegistro({super.key, required this.text});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class BotonRegistro extends StatelessWidget {
         );
       },
       style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all<Color>(Colors.green),
+        backgroundColor: WidgetStateProperty.all<Color>(Colors.green),
       ),
       child: Text(
         text,

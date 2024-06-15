@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class CampoNombreDeUsuario extends StatelessWidget {
   final String labelText;
 
-  const CampoNombreDeUsuario({Key? key, required this.labelText}) : super(key: key);
+  const CampoNombreDeUsuario({super.key, required this.labelText});
 
   @override
   Widget build(BuildContext context) {

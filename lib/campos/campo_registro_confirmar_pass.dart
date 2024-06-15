@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class CampoRegistroConfirmarPass extends StatelessWidget {
   final String labelText;
 
-  const CampoRegistroConfirmarPass({Key? key, required this.labelText}) : super(key: key);
+  const CampoRegistroConfirmarPass({super.key, required this.labelText});
 
   @override
   Widget build(BuildContext context) {

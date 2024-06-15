@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:untitle/crear_cuenta.dart';
+import 'package:Warded/crear_cuenta.dart';
 
 class BotonCrearCuenta extends StatelessWidget {
   final String text;
 
-  const BotonCrearCuenta({Key? key, required this.text}) : super(key: key);
+  const BotonCrearCuenta({super.key, required this.text});
 
   @override
   Widget build(BuildContext context) {
@@ -12,11 +12,11 @@ class BotonCrearCuenta extends StatelessWidget {
       onPressed: () {
         Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => CrearCuenta())
+            MaterialPageRoute(builder: (context) => const CrearCuenta())
         );
       },
       style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all<Color>(Colors.green),
+        backgroundColor: WidgetStateProperty.all<Color>(Colors.green),
       ),
       child: Text(
         text,

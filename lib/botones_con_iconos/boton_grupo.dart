@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:untitle/features/mis_grupos/view/mis_grupos_page.dart';
+import 'package:Warded/features/mis_grupos/view/mis_grupos_page.dart';
 
 class BotonGrupo extends StatelessWidget {
+  const BotonGrupo({super.key});
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => MisGruposPage()),
+          MaterialPageRoute(builder: (context) => const MisGruposPage()),
         );
       },
       child: Container(

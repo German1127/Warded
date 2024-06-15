@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:untitle/terminos_condiciones.dart';
+import 'package:Warded/terminos_condiciones.dart';
 
 class BotonTerminosCondiciones extends StatelessWidget {
+  const BotonTerminosCondiciones({super.key});
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => TerminosCondiciones()),
+          MaterialPageRoute(builder: (context) => const TerminosCondiciones()),
         );
       },
       child: Container(

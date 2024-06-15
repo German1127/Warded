@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class BotonActualizarPerfil extends StatelessWidget {
+  const BotonActualizarPerfil({super.key});
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
