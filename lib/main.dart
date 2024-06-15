@@ -9,10 +9,14 @@ import 'firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:Warded/fcm_service.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'funciones_notificacion.dart';
+
 
 final db = FirebaseFirestore.instance;
-Vecino currentUser = Vecino("","","","","");
-Grupo currentGroup = Grupo("",[]);
+Vecino currentUser = Vecino("", "", "", "", "");
+Grupo currentGroup = Grupo("", []);
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -33,6 +37,17 @@ void main() async {
   String? token = await messaging.getToken();
   print('Token de notificación: $token');
 
+  FCMService fcmService = FCMService();
+  String? savedToken = await fcmService.getTokenAndSaveToFirestore();
+
+  // Configuración de notificaciones locales
+  AndroidInitializationSettings initializationSettingsAndroid =
+  AndroidInitializationSettings('logo');
+  InitializationSettings initializationSettings =
+  InitializationSettings(android: initializationSettingsAndroid);
+  await flutterLocalNotificationsPlugin.initialize(initializationSettings,
+      onDidReceiveNotificationResponse: selectNotification);
+
   runApp(
     BlocProvider(
       create: (context) => MisGruposCubit()..getVecinos(),
@@ -42,7 +57,7 @@ void main() async {
 }
 
 class WardedAPP extends StatelessWidget {
-  const WardedAPP({super.key});
+  const WardedAPP();
 
   @override
   Widget build(BuildContext context) {
