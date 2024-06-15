@@ -41,11 +41,6 @@ class PaginaPrincipal extends StatelessWidget {
               );
             },
           ),
-          IconButton(
-              onPressed: (){showNotification();},
-              color: Colors.green,
-              icon: const Icon(Icons.notifications)
-          ),
         ],
       ),
       body: Stack(
