@@ -18,31 +18,32 @@ class Grupo {
     }
     return retList;
   }
-  void addMember(Vecino member) async {
+  Future<void> addMember(Vecino member) async {
     if (member.id == '') {
       member.toFirestore();
     }
     members.add(member.id);
     toFirestore();
   }
-  void removeMember(Vecino member) async {
+  Future<void> removeMember(Vecino member) async {
     members.remove(member.id);
     toFirestore();
   }
 
-  void toFirestore() async {
+  Future<void> toFirestore() async {
     final g = <String, dynamic>{
       'members': members,
     };
 
-    if (id != '') {
+    if (id != '' && members != []) {
       await db.collection('grupos').doc(id).set(g);
 
+    } else if (id != '' && members == []) {
+      db.collection('grupos').doc(id).delete();
+
     } else {
-      final ref = await db.collection('grupos').add(g);
-      final snap = await ref.get();
-      final data = snap.data() as Map<String, dynamic>;
-      id = data['id'];
+        final ref = await db.collection('grupos').add(g);
+        id = ref.id;
     }
   }
 
@@ -58,3 +59,4 @@ class Grupo {
     return newGroup;
   }
 }
+

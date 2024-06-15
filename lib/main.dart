@@ -3,16 +3,16 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:Warded/features/mis_grupos/cubic/mis_grupos_cubit.dart';
 import 'package:flutter/services.dart';
 import 'package:Warded/login.dart';
+import 'features/mis_grupos/models/vecino.dart';
+import 'features/mis_grupos/models/grupo.dart';
 import 'firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'fcm_service.dart';
-import 'package:flutter_local_notifications/flutter_local_notifications.dart';
-import 'package:url_launcher/url_launcher.dart';
-import 'funciones_notificacion.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 
 final db = FirebaseFirestore.instance;
-final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
+Vecino currentUser = Vecino("","","","","");
+Grupo currentGroup = Grupo("",[]);
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,22 +23,27 @@ void main() async {
     systemNavigationBarColor: Colors.black,
   ));
 
-  FCMService fcmService = FCMService();
-  String? token = await fcmService.getTokenAndSaveToFirestore();
+  FirebaseMessaging messaging = FirebaseMessaging.instance;
+  NotificationSettings settings = await messaging.requestPermission(
+    alert: true,
+    badge: true,
+    sound: true,
+  );
 
-  // notificaciones locales
-  AndroidInitializationSettings initializationSettingsAndroid = AndroidInitializationSettings('logo');
-  InitializationSettings initializationSettings = InitializationSettings(android: initializationSettingsAndroid);
-  await flutterLocalNotificationsPlugin.initialize(initializationSettings, onDidReceiveNotificationResponse: selectNotification);
+  String? token = await messaging.getToken();
+  print('Token de notificación: $token');
 
   runApp(
     BlocProvider(
       create: (context) => MisGruposCubit()..getVecinos(),
-      child: WardedAPP(),
+      child: const WardedAPP(),
     ),
   );
 }
+
 class WardedAPP extends StatelessWidget {
+  const WardedAPP({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -52,7 +57,7 @@ class WardedAPP extends StatelessWidget {
           ),
         ),
       ),
-      home: Login(),
+      home: const Login(),
     );
   }
 }
