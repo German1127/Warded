@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:Warded/pagina_principal.dart';
 
 class BotonIniSesion extends StatelessWidget {
   final String text;
@@ -8,8 +9,11 @@ class BotonIniSesion extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: () {
-        // Aca va la funcion que le des al tocar el boton
+      onPressed: () {Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => PaginaPrincipal())
+      );
+
       },
       style: ButtonStyle(
         backgroundColor: WidgetStateProperty.all<Color>(Colors.green),
