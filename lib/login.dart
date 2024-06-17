@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'Botones/boton_iniciar_sesion.dart';
-import 'Campos/campo_nombre_de_usuario.dart';
+import 'Campos/campo_correo_elec.dart';
 import 'Campos/campo_contraseña.dart';
 import 'Botones/boton_crear_cuenta.dart';
 
@@ -44,7 +44,7 @@ class Login extends StatelessWidget {
                   const Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      CampoNombreDeUsuario(labelText: 'Nombre de usuario'),
+                      CampoNombreDeUsuario(labelText: 'Correo electrónico'),
                       SizedBox(height: 20.0),
                       CampoPass(),
                       SizedBox(height: 20.0),

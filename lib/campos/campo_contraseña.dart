@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CampoPass extends StatefulWidget {
-  const CampoPass({super.key});
+  const CampoPass({Key? key});
 
   @override
   CampoPassState createState() => CampoPassState();
@@ -16,8 +16,8 @@ class CampoPassState extends State<CampoPass> {
       obscureText: _obscureText,
       style: const TextStyle(color: Colors.black),
       decoration: InputDecoration(
-        labelText: 'Contraseña',
-        labelStyle: const TextStyle(color: Colors.black),
+        hintText: 'Contraseña',
+        hintStyle: TextStyle(color: Colors.black),
         filled: true,
         fillColor: Colors.green,
         border: const OutlineInputBorder(),

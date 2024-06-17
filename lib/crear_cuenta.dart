@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
-import 'Campos/campo_registro_nombre.dart';
+import 'Campos/campo_registro_correo_elec.dart';
 import 'Campos/campo_registro_pass.dart';
 import 'Campos/campo_registro_confirmar_pass.dart';
 import 'Botones/boton_registro.dart';
@@ -111,14 +111,14 @@ class CrearCuenta extends StatelessWidget {
                         child: const ImageInput(),
                       ),
                       const SizedBox(height: 0.0),
-                      const CampoRegistroNombre(labelText: 'Nombre'),
+                      const CampoRegistroNombre(labelText: 'Correo electrónico'),
                       const SizedBox(height: 20.0),
                       const CampoRegistroPass(labelText: 'Pass'),
                       const SizedBox(height: 20.0),
                       const CampoRegistroConfirmarPass(
-                          labelText: 'Confirma el pass'),
+                          labelText: 'Confirma la Contraseña'),
                       const SizedBox(height: 20.0),
-                      const BotonRegistro(text: 'Listo'),
+                      const BotonRegistro(text: 'Crear cuenta'),
                     ],
                   ),
                 ),
