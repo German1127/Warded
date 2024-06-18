@@ -22,7 +22,7 @@ class BotonIniSesion extends StatelessWidget {
         );
 
 
-        Navigator.push(
+        Navigator.pushReplacement(
           context,
           MaterialPageRoute(builder: (context) => PaginaPrincipal()),
         );

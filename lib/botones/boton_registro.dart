@@ -21,7 +21,7 @@ class BotonRegistro extends StatelessWidget {
           ),
         );
 
-        Navigator.push(
+        Navigator.pushReplacement(
           context,
           MaterialPageRoute(builder: (context) => PaginaPrincipal()),
         );

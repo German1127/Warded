@@ -16,7 +16,7 @@ class BotonCrearCuenta extends StatelessWidget {
       onPressed: () async {
         currentUser = await Vecino.fromFirestore("1");
         currentGroup = await Grupo.fromFirestore(currentUser.groupId);
-        Navigator.push(
+        Navigator.pushReplacement(
             context,
             MaterialPageRoute(builder: (context) => const CrearCuenta())
         );

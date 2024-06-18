@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:Warded/features/mis_grupos/cubic/mis_grupos_cubit.dart';
 import 'package:flutter/services.dart';
-import 'package:Warded/login.dart';
-import 'features/mis_grupos/models/vecino.dart';
-import 'features/mis_grupos/models/grupo.dart';
-import 'firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
-import 'package:Warded/fcm_service.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:Warded/fcm_service.dart';
+import 'package:Warded/features/mis_grupos/cubic/mis_grupos_cubit.dart';
+import 'package:Warded/login.dart';
+import 'package:Warded/pagina_principal.dart';
+import 'package:Warded/onboarding_screen.dart';
 import 'funciones_notificacion.dart';
+import 'features/mis_grupos/models/vecino.dart';
+import 'features/mis_grupos/models/grupo.dart';
+import 'firebase_options.dart';
 
 
 final db = FirebaseFirestore.instance;
@@ -48,16 +51,31 @@ void main() async {
   await flutterLocalNotificationsPlugin.initialize(initializationSettings,
       onDidReceiveNotificationResponse: selectNotification);
 
+  // Verificar si se ha mostrado el tutorial
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  bool seenOnboarding = prefs.getBool('seenOnboarding') ?? false;
+
+  Widget initialRoute;
+  if (seenOnboarding) {
+    // Si ya se ha visto el tutorial, muestra la pantalla de login
+    initialRoute = const Login();
+  } else {
+    // Si no se ha visto el tutorial, muestra el tutorial
+    initialRoute = OnboardingScreen();
+  }
+
   runApp(
     BlocProvider(
       create: (context) => MisGruposCubit()..getVecinos(),
-      child: const WardedAPP(),
+      child: WardedAPP(initialRoute),
     ),
   );
 }
 
 class WardedAPP extends StatelessWidget {
-  const WardedAPP();
+  final Widget initialRoute;
+
+  const WardedAPP(this.initialRoute);
 
   @override
   Widget build(BuildContext context) {
@@ -72,7 +90,7 @@ class WardedAPP extends StatelessWidget {
           ),
         ),
       ),
-      home: const Login(),
+      home: initialRoute,
     );
   }
 }
