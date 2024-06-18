@@ -9,14 +9,26 @@ class BotonIniSesion extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: () {Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => PaginaPrincipal())
-      );
+      onPressed: () {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text(
+              '¡Bienvenido!',
+              style: TextStyle(color: Colors.green, fontSize: 22.0),
+            ),
+            backgroundColor: Colors.black,
+            duration: Duration(seconds: 2),
+          ),
+        );
 
+
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => PaginaPrincipal()),
+        );
       },
       style: ButtonStyle(
-        backgroundColor: WidgetStateProperty.all<Color>(Colors.green),
+        backgroundColor: MaterialStateProperty.all<Color>(Colors.green),
       ),
       child: Text(
         text,

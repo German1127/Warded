@@ -10,13 +10,24 @@ class BotonRegistro extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text(
+              'Cuenta creada satisfactoriamente',
+              style: TextStyle(color: Colors.green, fontSize: 18.0),
+            ),
+            backgroundColor: Colors.black,
+            duration: Duration(seconds: 2),
+          ),
+        );
+
         Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => PaginaPrincipal())
+          context,
+          MaterialPageRoute(builder: (context) => PaginaPrincipal()),
         );
       },
       style: ButtonStyle(
-        backgroundColor: WidgetStateProperty.all<Color>(Colors.green),
+        backgroundColor: MaterialStateProperty.all<Color>(Colors.green),
       ),
       child: Text(
         text,
