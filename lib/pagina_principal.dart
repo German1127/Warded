@@ -11,6 +11,7 @@ import 'botones_con_iconos/boton_grupo.dart';
 import 'botones_con_iconos/boton_mapa.dart';
 import 'botones_con_iconos/boton_sospechoso.dart';
 import 'botones_con_iconos/boton_trafico.dart';
+import 'package:Warded/login.dart';
 import 'funciones_notificacion.dart';
 import 'package:Warded/main.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
@@ -38,6 +39,16 @@ class PaginaPrincipal extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => const TerminosCondiciones()),
+              );
+            },
+          ),
+          IconButton(
+            icon: const Icon(Icons.logout),
+            color: Colors.green,
+            onPressed: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => const Login()),
               );
             },
           ),

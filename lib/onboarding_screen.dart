@@ -21,7 +21,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     '¡Notifica a tu grupo!',
   ];
   List<String> _descriptions = [
-    'Evita activar alarmas accidentalmente; mantenlas presionadas durante dos segundos.',
+    'Pon en marcha la alarma con un toque de dos segundos.',
     'Crea o únete a un grupo, ten control de quién recibe tus alertas.',
     'Utiliza las alertas para reportar incidentes a tus vecinos.',
   ];
