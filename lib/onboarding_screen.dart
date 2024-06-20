@@ -101,31 +101,32 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               children: _buildPageIndicator(),
             ),
             SizedBox(height: 40.0),
-            ElevatedButton(
-              onPressed: () async {
-                SharedPreferences prefs =
-                await SharedPreferences.getInstance();
-                await prefs.setBool('seenOnboarding', true);
+            if (_currentPage == _imagePaths.length - 1)
+              ElevatedButton(
+                onPressed: () async {
+                  SharedPreferences prefs =
+                  await SharedPreferences.getInstance();
+                  await prefs.setBool('seenOnboarding', true);
 
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => const Login()),
-                );
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.green,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30.0),
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => const Login()),
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.green,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30.0),
+                  ),
+                ),
+                child: const Padding(
+                  padding: EdgeInsets.symmetric(vertical: 15.0, horizontal: 30.0),
+                  child: Text(
+                    'Empezar',
+                    style: TextStyle(color: Colors.black, fontSize: 18.0),
+                  ),
                 ),
               ),
-              child: const Padding(
-                padding: EdgeInsets.symmetric(vertical: 15.0, horizontal: 30.0),
-                child: Text(
-                  'Empezar',
-                  style: TextStyle(color: Colors.black, fontSize: 18.0),
-                ),
-              ),
-            ),
           ],
         ),
       ),
